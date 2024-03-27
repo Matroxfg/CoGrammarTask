@@ -31,9 +31,6 @@ print("--------------------------------------------")
 # This is the function that will return the flight cost
 city_flight = input('\nPlease select your destination: ').capitalize()
 
-# This is the function that will return the flight cost
-city_flight = input('\nPlease select your destination: ').capitalize()
-
 
 def plane_cost(city_flight):
     return cities[city_flight][0]['flight']
