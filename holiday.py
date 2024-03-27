@@ -18,13 +18,18 @@ cities = {'Rome': [{'flight': 400}, {'hotel': 150}, {'car': 50}],
 
 catalogue = input('Please press enter to see our catalogue.')
 
-# This loop will show all the destinations and the relevant information
-for destination in cities.keys():
+# This for loop will show the dictionary above as a table
+print("\n-----------------Catalogue------------------")
+print("{:<15} {:<10} {:<10} {:<10}\n".format('Destination', 'Flight', 'Hotel', 'Car'))
+for destination, value in cities.items():
     flight_price = cities[destination][0]['flight']
     hotel_price = cities[destination][1]['hotel']
     car_price = cities[destination][2]['car']
-    print(f"The flight to {destination} costs £{flight_price}. The cost of the hotel per night is £{hotel_price}, "
-          f"and the car rental will cost you £{car_price} per day.")
+    print("{:<16} {:<10} {:<9} {:<10}".format(destination, flight_price, hotel_price, car_price))
+print("--------------------------------------------")
+
+# This is the function that will return the flight cost
+city_flight = input('\nPlease select your destination: ').capitalize()
 
 # This is the function that will return the flight cost
 city_flight = input('\nPlease select your destination: ').capitalize()
