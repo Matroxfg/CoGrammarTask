@@ -42,21 +42,37 @@ else:
     plane_cost(city_flight)
 
 # This is the function that returns the cost of the hotel
-num_nights = int(input('\nHow many nights do you want to stay in your destination? '))
-
 
 def hotel_cost(num_nights):
     hotel_price = cities[city_flight][1]['hotel']
     return num_nights * hotel_price
 
+# Prompt the user for the number of nights with error checking
+# The user will be asked to write a number anytime a non numerical value (such as text) is used as input
+
+while True:
+    try:
+        num_nights = int(input('\nHow many nights do you want to stay in your destination? '))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a numerical value for the number of nights.")
+
 
 # This is the function that returns the cost of the car rental
-rental_days = int(input('\nHow many days of car rental do you need? '))
-
 
 def car_rental(rental_days):
     car_price = cities[city_flight][2]['car']
     return car_price * rental_days
+          
+# Prompt the user for the number of rental days with error checking
+# The user will be asked to write a number anytime a non numerical value (such as text) is used as input
+
+while True:
+    try:
+        rental_days = int(input('\nHow many days of car rental do you need? '))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a numerical value for the rental days.")
 
 
 # This is the function that returns the total cost of the holiday
